@@ -21,7 +21,7 @@ public class kkh_2839{
 			count = num/5;
 		}
 		
-		if(count < 3) {
+		if(num < 3) {
 			return count+1;
 		} else {
 			if((num%5)/3 < 3) {
