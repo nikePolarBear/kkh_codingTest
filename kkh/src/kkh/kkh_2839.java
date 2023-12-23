@@ -6,29 +6,19 @@ import java.util.*;
  * 상근이가 설탕을 정확하게 N킬로그램 배달해야 할 때, 봉지 몇 개를 가져가면 되는지 그 수를 구하는 프로그램을 작성하시오.
  */
 public class kkh_2839{
-	public static int main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
 		
-		String scNum = sc.next();
-		
-		int num = Integer.parseInt(scNum);
-		
-		int count = 0;
-		
-		if(num < 5) {
-			return 1;
-		} else {
-			count = num/5;
-		}
-		
-		if(num < 3) {
-			return count+1;
-		} else {
-			if((num%5)/3 < 3) {
-				return count+(num%5)/3+1;
-			} else {
-				return count+(num%5)/3;
-			}
-		}
+		int N = sc.nextInt();
+
+		if(N == 4 || N == 7) {
+			System.out.println(-1);
+		} else if(N % 5 == 0) {
+			System.out.println(N / 5);
+		} else if(N % 5 == 1 || N % 5 == 3) {
+			System.out.println(N / 5 + 1);
+		} else if(N % 5 == 2 || N % 5 == 4) {
+			System.out.println(N / 5 + 2);
+		}	
 	}
 }
